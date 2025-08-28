@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WeAreCustomr — CRM made simple, growth made repeatable</title>
+  <meta name="description" content="WeAreCustomr is led by Steph & Soha — female founders helping retail & ecommerce brands turn first-time buyers into loyal customers via lifecycle CRM (Email, SMS, Loyalty)." />
+  <meta property="og:title" content="WeAreCustomr — CRM made simple, growth made repeatable" />
+  <meta property="og:description" content="Female-founded CRM team helping brands grow repeat revenue. Email, SMS & Loyalty done for you." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.wearecustomr.com.au/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Brand + playful accents */
+      --ink:#0E1116;
+      --paper:#fffdfc;
+      --peach:#FFE5DE;
+      --peach-2:#FFD5CD;
+      --coral:#F26D5B;
+      --hot:#FF2B6A;
+      --magenta:#D44CF6;
+      --violet:#7C4DFF;
+      --slate:#1B2230;
+      --line:#EAE7E6;
+      --muted:#6B7280;
+      --tile:#ffffff;
+      --tile-dark:#0F172A;
+      --glow: 0 10px 30px rgba(242,109,91,.3);
+    }
+
+    /* Base */
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--paper);color:var(--ink)}
+    img{max-width:100%;display:block}
+    a{color:var(--hot);text-decoration:none}
+    .container{max-width:1180px;margin:0 auto;padding:0 22px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    header .bar{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    nav a{font-weight:700;margin:0 10px;opacity:.9}
+    nav a:hover{opacity:1}
+
+    /* Buttons + badges */
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-weight:800;padding:.95rem 1.25rem}
+    .btn.primary{background:var(--hot);color:#fff;box-shadow:var(--glow)}
+    .btn.light{background:#fff;border:1px solid var(--line);color:var(--ink)}
+    .btn.ghost{border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .badge{display:inline-flex;gap:.5rem;align-items:center;border-radius:999px;font-weight:700;padding:.5rem .8rem;background:var(--peach);color:var(--hot);border:1px solid var(--peach-2)}
+    .kicker{letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:var(--hot);font-size:.78rem}
+
+    /* Sections */
+    section{padding:86px 0}
+    h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.04;margin:.25rem 0 1rem}
+    h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 1rem}
+    p.lead{font-size:1.125rem;color:#374151;max-width:62ch}
+
+    /* Hero with big gradient + blobs */
+    .hero-wrap{
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(1000px 400px at 85% 10%, #ffe9e3 0%, rgba(255,233,227,0) 60%),
+        radial-gradient(700px 350px at 10% 0%, #fef2f2 0%, rgba(254,242,242,0) 55%);
+    }
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}}
+    .blob{
+      position:absolute;filter:blur(24px);opacity:.55;z-index:0;border-radius:40%;
+      animation: float 12s ease-in-out infinite alternate;
+    }
+    .blob.one{width:360px;height:360px;background:radial-gradient(circle at 30% 30%, #ffd6cf, #ffc2d6);top:-80px;right:10%}
+    .blob.two{width:480px;height:480px;background:radial-gradient(circle at 70% 40%, #ffd9fe, #ffe3e0);bottom:-120px;left:-80px;animation-duration:14s}
+    @keyframes float{to{transform:translateY(-18px) translateX(10px)}}
+    .hero > *{position:relative;z-index:1}
+
+    /* Tiles / Cards */
+    .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}
+    @media (max-width:900px){.tiles{grid-template-columns:1fr}}
+    .tile{
+      background:var(--tile);border:1px solid var(--line);border-radius:18px;padding:20px;
+      box-shadow:0 6px 22px rgba(17,24,39,.04)
+    }
+    .tile .icon{font-size:24px}
+    .tile.accent{border:1px solid #ffc5b7;background:linear-gradient(180deg,#fff 0%, #fff6f3 100%)}
+    .tile.violet{border:1px solid #e8ddff;background:linear-gradient(180deg,#fff 0%, #f7f4ff 100%)}
+    .tile.pink{border:1px solid #ffd7eb;background:linear-gradient(180deg,#fff 0%, #fff2f8 100%)}
+
+    /* Impact dark glossy */
+    .section-dark{
+      background:linear-gradient(180deg,#0f1320 0%, #151b2b 100%);
+      color:#fff
+    }
+    .impact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:18px}
+    @media (max-width:980px){.impact{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    .impact .card{
+      background:linear-gradient(180deg,#0f172a 0%, #0b1220 100%);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.25)
+    }
+    .num{font-size:1.8rem;font-weight:900;color:var(--coral)}
+    .impact p{margin:.35rem 0 0;color:#d1d5db}
+
+    /* Logos */
+    .logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px;margin-top:18px}
+    .logo-tile{
+      background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;
+      display:flex;align-items:center;justify-content:center;transition:transform .2s ease, box-shadow .2s ease
+    }
+    .logo-tile:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(17,24,39,.08)}
+    .logos img{max-height:44px;filter:grayscale(100%);opacity:.9}
+
+    /* Team */
+    .team-card{
+      display:grid;grid-template-columns:.85fr 1.15fr;gap:26px;align-items:center;
+      background:linear-gradient(180deg,#fff 0%, #fff8f6 100%);border:1px solid var(--line);border-radius:20px;padding:22px
+    }
+    @media (max-width:980px){.team-card{grid-template-columns:1fr}}
+    .team-photo{border-radius:16px;box-shadow:0 20px 50px rgba(242,109,91,.18)}
+    .founders-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:10px}
+    .founders-list .chip{background:var(--peach);border:1px solid var(--peach-2);border-radius:999px;padding:.5rem .8rem;font-weight:700;color:var(--hot);text-align:center}
+
+    /* Partners band */
+    .partners{background:linear-gradient(180deg,#fff 0%, #fff7f5 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .badge-row{display:flex;flex-wrap:wrap;gap:10px}
+    .tech-badge{
+      background:#fff;border:1px solid var(--line);border-radius:999px;padding:.55rem .85rem;font-weight:800;
+      box-shadow:0 6px 18px rgba(17,24,39,.05)
+    }
+
+    /* Testimonials */
+    .testimonials{background:linear-gradient(180deg,#fff 0%, #fff3f1 100%);border-top:1px solid var(--line)}
+    .slider{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff}
+    .slides{display:flex;transition:transform .5s ease}
+    .slide{min-width:100%;padding:28px}
+    .quote{font-size:1.1rem;line-height:1.6}
+    .t-meta{margin-top:12px;color:#525a65;font-weight:700}
+    .dots{display:flex;gap:8px;justify-content:center;margin-top:14px}
+    .dot{width:10px;height:10px;border-radius:999px;background:#ffd6cf;border:1px solid #ffc6bb;cursor:pointer}
+    .dot.active{background:var(--hot);border-color:var(--hot)}
+    .arrow{position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:1px solid var(--line);width:38px;height:38px;border-radius:999px;display:grid;place-items:center;font-weight:900;cursor:pointer}
+    .arrow.left{left:10px}.arrow.right{right:10px}
+
+    /* CTA band */
+    .cta{
+      background:linear-gradient(135deg,#FFE5DE 0%, #fff 60%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+    }
+    .cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+    /* Reveal on scroll */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+    .reveal.show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container bar">
+      <a href="#home" aria-label="WeAreCustomr home">
+        <img src="assets/customr-logo.svg" alt="WeAreCustomr" style="height:30px">
+      </a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#impact">Impact</a>
+        <a href="#clients">Clients</a>
+        <a href="#team">Team</a>
+        <a href="#pillars">Pillars</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero-wrap">
+    <div class="blob one"></div>
+    <div class="blob two"></div>
+    <div class="container hero">
+      <div>
+        <div class="kicker reveal">Women-led • CRM Consultancy</div>
+        <h1 class="reveal">We help customers come back for more — with <span style="color:var(--hot)">Email</span>, <span style="color:var(--magenta)">SMS</span> & <span style="color:var(--violet)">Loyalty</span>.</h1>
+        <p class="lead reveal">Steph & Soha dive deep into your data, clean your hygiene, audit quick wins, and implement the tweaks that grow repeat revenue — without overwhelming your team.</p>
+        <div class="reveal" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+          <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">Book a Call</a>
+          <a class="btn light" href="#team">Meet the Founders</a>
+          <span class="badge">Emarsys • Klaviyo • Loyalty</span>
+        </div>
+
+        <!-- SERVICES mini-tiles -->
+        <div id="services" class="tiles">
+          <div class="tile accent reveal">
+            <div class="icon">📧</div>
+            <h3 style="margin:.25rem 0 .35rem">Email Programs</h3>
+            <p style="margin:0;color:#525a65">Deliverability, journeys, offers, content that converts.</p>
+          </div>
+          <div class="tile pink reveal">
+            <div class="icon">💬</div>
+            <h3 style="margin:.25rem 0 .35rem">SMS & Push</h3>
+            <p style="margin:0;color:#525a65">Right message, right moment — minus the spam vibes.</p>
+          </div>
+          <div class="tile violet reveal">
+            <div class="icon">🎁</div>
+            <h3 style="margin:.25rem 0 .35rem">Loyalty</h3>
+            <p style="margin:0;color:#525a65">VIPs, tiers, perks that boost purchase frequency.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <img src="assets/team-soha-steph.jpg.jpg"
+             alt="Steph & Soha — WeAreCustomr Founders"
+             class="team-photo reveal">
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section id="impact" class="section-dark">
+    <div class="container">
+      <h2 class="reveal" style="color:#fff">Impact</h2>
+      <p class="lead reveal" style="color:#d1d5db">Real outcomes for our clients — explained in plain English.</p>
+      <div class="impact">
+        <div class="card reveal"><div class="num">+46%</div><p>Email revenue YoY</p></div>
+        <div class="card reveal"><div class="num">20×</div><p>ROI on SMS</p></div>
+        <div class="card reveal"><div class="num">-2%</div><p>Unsub rate</p></div>
+        <div class="card reveal"><div class="num">+34%</div><p>Purchase frequency</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners" aria-label="Tech partners">
+    <div class="container">
+      <h2 class="reveal">We work with your stack</h2>
+      <p class="lead reveal">We’re platform-neutral — we recommend what works, not what pays us.</p>
+      <div class="badge-row reveal">
+        <span class="tech-badge">Emarsys</span>
+        <span class="tech-badge">Klaviyo</span>
+        <span class="tech-badge">Braze</span>
+        <span class="tech-badge">Wunderkind</span>
+        <span class="tech-badge">Validity</span>
+        <span class="tech-badge">Tall Bob</span>
+        <span class="tech-badge">Lifetimely</span>
+        <span class="tech-badge">Postscript</span>
+        <span class="tech-badge">Triple Whale</span>
+        <span class="tech-badge">Lexer</span>
+        <span class="tech-badge">Sinch</span>
+        <span class="tech-badge">Peel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section id="clients">
+    <div class="container">
+      <h2 class="reveal">Trusted by</h2>
+      <p class="lead reveal">From Australian fashion icons to household names — brands trust us to grow CRM revenue.</p>
+      <div class="logos">
+        <div class="logo-tile reveal"><img src="assets/viktoria-and-woods.svg" alt="Viktoria & Woods"></div>
+        <div class="logo-tile reveal"><img src="assets/gazman.svg" alt="Gazman"></div>
+        <div class="logo-tile reveal"><img src="assets/cable-melbourne.svg" alt="Cable Melbourne"></div>
+      </div>
+      <p class="reveal" style="margin-top:12px;color:var(--muted);font-size:.92rem">Previously: Catchy, The DOM</p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team">
+    <div class="container">
+      <h2 class="reveal">Meet WeAreCustomr</h2>
+      <div class="team-card reveal">
+        <img src="assets/team-soha-steph.jpg.jpg" alt="Steph Mitchell & Soha Hosseini" class="team-photo">
+        <div>
+          <p class="lead">WeAreCustomr is led by <strong>Steph Mitchell</strong> & <strong>Soha Hosseini</strong> — pragmatic, data-led CRM consultants who prefer candour over fluff. We keep things simple, explain the ‘why’, and do the heavy lifting so you don’t have to.</p>
+          <div class="founders-list">
+            <div class="chip">Platform-neutral</div>
+            <div class="chip">Train & Document</div>
+            <div class="chip">Your Data First</div>
+            <div class="chip">Actionable &gt; Theoretical</div>
+          </div>
+          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">Talk with Steph & Soha</a>
+            <a class="btn ghost" href="#pillars">See our pillars</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section id="pillars">
+    <div class="container">
+      <h2 class="reveal">Our Pillars</h2>
+      <div class="tiles">
+        <div class="tile accent reveal"><strong>Platform-neutral</strong><br>We recommend what works, not what pays us.</div>
+        <div class="tile pink reveal"><strong>Train & Document</strong><br>We leave you smarter, not dependent.</div>
+        <div class="tile violet reveal"><strong>Your Data First</strong><br>Your customer reality drives the plan.</div>
+        <div class="tile accent reveal"><strong>Actionable, not theoretical</strong><br>Practical steps that pay back — quickly.</div>
+        <div class="tile pink reveal"><strong>Candour always</strong><br>If it won’t work, we’ll tell you straight.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" aria-label="Testimonials">
+    <div class="container">
+      <h2 class="reveal">Why brands choose WeAreCustomr</h2>
+      <div class="slider reveal" aria-live="polite">
+        <button class="arrow left" aria-label="Previous testimonial" id="prevT">‹</button>
+        <div class="slides" id="tSlides">
+          <div class="slide">
+            <p class="quote">“Steph & Soha turned our messy data into a clean CRM engine. We finally understand what’s working — and revenue followed.”</p>
+            <div class="t-meta">Head of Digital, AU Retailer</div>
+          </div>
+          <div class="slide">
+            <p class="quote">“They kept things simple for our team, documented everything, and delivered quick wins. Churn is down and frequency is up.”</p>
+            <div class="t-meta">Ecommerce Lead, Fashion</div>
+          </div>
+          <div class="slide">
+            <p class="quote">“No fluff. Clear plan, pragmatic execution, strong results. Exactly what we needed.”</p>
+            <div class="t-meta">Marketing Director, Homewares</div>
+          </div>
+        </div>
+        <button class="arrow right" aria-label="Next testimonial" id="nextT">›</button>
+      </div>
+      <div class="dots" id="tDots" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="cta">
+    <div class="container wrap">
+      <div>
+        <div class="kicker">Next step</div>
+        <h2 style="margin:.35rem 0 0">Let’s talk about your repeat revenue</h2>
+        <p class="lead" style="max-width:56ch;margin:.35rem 0 0">We’ll listen first. You talk, we’ll take notes — then show you the fastest path to impact.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">Book a Call</a>
+        <a class="btn light" href="#team">Meet the founders →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid var(--line)">
+    <div class="container" style="padding:18px 0;color:#6B7280;display:flex;flex-wrap:wrap;justify-content:space-between">
+      <div>© <span id="year"></span> WeAreCustomr. All rights reserved.</div>
+      <div><a href="#">Privacy</a> · <a href="#">Terms</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
+    }, {threshold: .15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Testimonials slider (auto + controls)
+    (function(){
+      const slides = document.getElementById('tSlides');
+      const dotsWrap = document.getElementById('tDots');
+      const total = slides.children.length;
+      let i = 0, timer;
+
+      function go(n){
+        i = (n+total)%total;
+        slides.style.transform = `translateX(-${i*100}%)`;
+        [...dotsWrap.children].forEach((d,idx)=>d.classList.toggle('active', idx===i));
+      }
+      function auto(){ timer && clearInterval(timer); timer = setInterval(()=>go(i+1), 5000); }
+
+      // dots
+      for(let d=0; d<total; d++){
+        const dot = document.createElement('button');
+        dot.className = 'dot' + (d===0?' active':'');
+        dot.addEventListener('click', ()=>{ go(d); auto(); });
+        dotsWrap.appendChild(dot);
+      }
+
+      document.getElementById('prevT').addEventListener('click', ()=>{ go(i-1); auto(); });
+      document.getElementById('nextT').addEventListener('click', ()=>{ go(i+1); auto(); });
+      auto();
+
+      // rudimentary swipe on mobile
+      let startX=0;
+      slides.addEventListener('touchstart', e=>startX = e.touches[0].clientX);
+      slides.addEventListener('touchend', e=>{
+        const dx = e.changedTouches[0].clientX - startX;
+        if(Math.abs(dx) > 40){ go(i + (dx<0?1:-1)); auto(); }
+      });
+    })();
+  </script>
+</body>
+</html>
